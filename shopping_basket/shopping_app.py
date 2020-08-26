@@ -50,10 +50,9 @@ class ShoppingApp(object):
             elif product_name == "Baked Beans" and product_quantity:
                 self.applied_discounts += int(product_quantity/3)*get_price
 
-        self.total = self.rounding_function((self.sub_total - self.applied_discounts),2)
-        self.sub_total = self.rounding_function(self.sub_total,2)
-        self.applied_discounts = self.rounding_function(self.applied_discounts,2)
-
+        self.total = self.rounding_function((self.sub_total - self.applied_discounts), 2)
+        self.sub_total = self.rounding_function(self.sub_total, 2)
+        self.applied_discounts = self.rounding_function(self.applied_discounts, 2)
 
             # this was a another approach as i wanted to make a predefined catalog with the offers
             # wasn't actually a really good idea because of performance issues
@@ -104,14 +103,12 @@ class ShoppingApp(object):
         self.applied_discounts = self.rounding_function(self.applied_discounts, 2)
         self.total = self.rounding_function(self.sub_total - self.applied_discounts, 2)
 
-
     # https://stackoverflow.com/questions/2356501/how-do-you-round-up-a-number-in-python
     @staticmethod
     def rounding_function(number, decimals=0):
         print(number)
         multiplier = 10 ** decimals
         return math.ceil(number * multiplier) / multiplier
-
 
     def calculate_bill_if_offer(self):
 
@@ -144,7 +141,6 @@ class ShoppingApp(object):
     # this class can be moved to another module if extended but now i guess there is no need
     # to move it to another one as its too small
     # this class is intended to do the test operations
-
 
     # code removed used for debugging
 
